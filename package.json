@@ -1,0 +1,24 @@
+{
+  "name": "Projeto Blank",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "keywords": [],
+  "author": "Bruno Galvão",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^12.1.6",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "yarn": "^1.22.18"
+  },
+  "devDependencies": {
+    "sass": "^1.52.1"
+  }
+}

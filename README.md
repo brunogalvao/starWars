@@ -1,1 +1,1 @@
-# starWars
+# Projeto - Star Wars (NextJS)
