@@ -30,7 +30,7 @@ export default function Films({ films, id, data, diretor, img }) {
                 </li>
 
                 <li key={id}>
-                    <div className='label'>Data de Nascimento</div>
+                    <div className='label'>Diretor</div>
                     { diretor }
                 </li>
             </ul>
