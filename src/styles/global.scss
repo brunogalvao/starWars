@@ -65,11 +65,12 @@ $font: 'Roboto Condensed', sans-serif;
     display: flex;
     flex-direction: row;
     align-items: stretch;
-    background: rgba(255,255,255, .2);
+    background: rgba(255,255,255, .09);
 
-    margin-bottom: .5rem;
+    margin-bottom: 1rem;
 
     color: white;
+    box-shadow: rgb(255 255 255 / 28%) 0 0 8px;
 
     span {
         width: 50%;
