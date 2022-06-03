@@ -1,4 +1,6 @@
 import StarPeople from "../components/starPeople";
+import StarFilms from "../components/starFilms";
+import StarNave from "../components/starNave";
 import Image from "next/image";
 
 export async function getServerSideProps() {
@@ -42,45 +44,77 @@ export async function getServerSideProps() {
 
 export default function Home({ cliR, films, nave }) {
 
-    console.log( cliR.results[0].gender );
+    // console.log( cliR.results[0].films.map(i => films.results) );
+    console.log( nave.results[0] );
 
     const logo = "/images/sw_logo.png";
 
     return (
-        <div className="main"> 
+        <div className="main">
 
             <div className="logo">
-                {/* <img src="images/sw_logo.png" /> */}
                 <Image
-                    width = "497px"
-                    height = "194px"
-                    src = {logo}
+                    width="496px"
+                    height="194px"
+                    src={logo}
                 />
             </div>
+
+            <nav>
+                <li>People</li>
+                <li>Films</li>
+                <li>Starship</li>
+            </nav>
 
             <div
                 className="people">
                 {cliR.results.map(item => {
                     return (
                         <StarPeople
-                            id = { item.id }
-                            nome = { item.name }
-                            peso = { item.mass }
-                            altura = { item.height }
-                            // filme = { item.films.map(filme => films.results.map(item => { return ( <div> {item.title} </div> )
-                            // })) }
+                            id={item.id}
+                            nome={item.name}
+                            peso={item.mass}
+                            altura={item.height}
 
                             // starship = { item.starships.map(starship => nave.results.map(item => { return ( <div> {item.name} </div> )})) }
 
                             // starship = { item.starships.map( starships => nave.results.map( i => i.name )) }
 
-                            // starship = { item.starships }
-                            dataAni = { item.birth_year }
+                            dataAni={item.birth_year}
                         />
                     )
                 })}
             </div>
 
+            <div>
+                {films.results.map(item => {
+                    return (
+                        <StarFilms
+                            id={item.id}
+                            films={item.title}
+                            data={item.release_date}
+                            diretor={item.director}
+                            img={item.episode_id}
+                        />
+                    )
+                })}
+            </div>
+
+            <div>
+                {nave.results.map(item => {
+                    return (
+                        <StarNave
+                            id = {item.id}
+                            nome = {item.name}
+                            passageiros = {item.passengers}
+                            tamanho = {item.length}
+                            velocidade = {item.hyperdrive_rating}
+                            imgNave = {item.name}
+                            prod = {item.manufacturer}
+                        />
+                    )
+                })}
+            </div>
         </div>
     )
 }

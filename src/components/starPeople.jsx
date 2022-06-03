@@ -1,10 +1,8 @@
 import Image from 'next/image'
 
-export default function StarPeople({ nome, peso, altura, id, filme, starship, dataAni, ...props }) {
+export default function StarPeople({ nome, peso, altura, id, dataAni}) {
 
-    const img = "/images/"+ nome +".png";
-
-    console.log(img);
+    const img = "/images/people/"+ nome +".png";
 
     return(
         <div className="card">
@@ -12,11 +10,12 @@ export default function StarPeople({ nome, peso, altura, id, filme, starship, da
                 <Image
                     width = "485px"
                     height = "100%"
-                    src = { img.replace(' ', '').replace(' ', '') }
+                    src = { img.replaceAll(" ", "") }
                     ></Image>
             </span>
             <ul>
-                <li key={id}>
+                <li
+                    key={id}>
                     <div className='label'>Nome</div>
                     { nome }
                 </li>
